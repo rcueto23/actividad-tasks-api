@@ -12,9 +12,9 @@ module.exports = {
     AddTask: (request, response) => {
         const newTask = request.body;
         const newId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) + 1 : 1;
-        const tareaConId = { id: newId, tarea: newTask.tarea };
-        tasks.push(tareaConId);
-        response.json(tareaConId);
+        const taskWithId = { id: newId, tarea: newTask.tarea };
+        tasks.push(taskWithId);
+        response.json(taskWithId);
     },
 
     UpdateTask: (request, response) => {
